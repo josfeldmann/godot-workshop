@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ca4pnhmgd3w07"]
+
+[ext_resource type="PackedScene" uid="uid://dqbj03v0l56h2" path="res://flappy_bird.tscn" id="1_dn5c8"]
+[ext_resource type="Script" uid="uid://bxvgap65bf56x" path="res://wall_spawner.gd" id="2_dn5c8"]
+[ext_resource type="PackedScene" uid="uid://th4dweq51qde" path="res://wall_prefab.tscn" id="3_dn5c8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lxxf"]
+size = Vector2(1152, 71)
+
+[node name="Node2D" type="Node2D" unique_id=1377195063]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1689501160]
+limit_enabled = false
+
+[node name="FlappyBird" parent="." unique_id=2060909119 instance=ExtResource("1_dn5c8")]
+position = Vector2(-460, 0)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1340932105]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=1015292191]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=381408153]
+position = Vector2(0, 331)
+shape = SubResource("RectangleShape2D_8lxxf")
+
+[node name="ColorRect" type="ColorRect" parent="Node2D/StaticBody2D/CollisionShape2D" unique_id=1285968369]
+offset_left = -576.0
+offset_top = -36.0
+offset_right = -536.0
+offset_bottom = 4.0
+scale = Vector2(28.700253, 1.8888888)
+color = Color(0, 0.75110054, 0.24606183, 1)
+
+[node name="Spawner" type="Node2D" parent="." unique_id=899661468]
+position = Vector2(892, 0)
+script = ExtResource("2_dn5c8")
+prefab = ExtResource("3_dn5c8")
+random_offset = 50.0

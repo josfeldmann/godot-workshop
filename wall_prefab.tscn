@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://th4dweq51qde"]
+
+[ext_resource type="Script" uid="uid://denh8aymoh278" path="res://over_all_wall.gd" id="1_viok2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t0ol"]
+size = Vector2(124, 212)
+
+[node name="OverAllWall" type="Node2D" unique_id=830609008]
+script = ExtResource("1_viok2")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="." unique_id=567725823]
+position = Vector2(0, 58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=793574720]
+position = Vector2(0, 188)
+shape = SubResource("RectangleShape2D_0t0ol")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D/CollisionShape2D" unique_id=1136846791]
+offset_left = -62.0
+offset_top = -106.0
+offset_right = -22.0
+offset_bottom = -66.0
+scale = Vector2(3.0799987, 5.319999)
+
+[node name="RigidBody2D2" type="StaticBody2D" parent="." unique_id=1055856498]
+position = Vector2(0, -435)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=1281831827]
+position = Vector2(0, 188)
+shape = SubResource("RectangleShape2D_0t0ol")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D2/CollisionShape2D" unique_id=1484340457]
+offset_left = -62.0
+offset_top = -106.0
+offset_right = -22.0
+offset_bottom = -66.0
+scale = Vector2(3.0799987, 5.319999)
